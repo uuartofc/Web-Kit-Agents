@@ -2,8 +2,8 @@
 
 <p align="left">
   <a href="https://www.npmjs.com/package/@uuartofc/web-ag-kit"><img src="https://img.shields.io/npm/v/@uuartofc/web-ag-kit?logo=npm&color=CB3837" alt="npm version"></a>
-  <a href="https://github.com/uuartofc/AG-Kits"><img src="https://img.shields.io/github/stars/uuartofc/AG-Kits?style=flat&logo=github" alt="GitHub stars"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/uuartofc/AG-Kits?color=blue" alt="MIT license"></a>
+  <a href="https://github.com/uuartofc/Web-Kit-Agents"><img src="https://img.shields.io/github/stars/uuartofc/Web-Kit-Agents?style=flat&logo=github" alt="GitHub stars"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/uuartofc/Web-Kit-Agents?color=blue" alt="MIT license"></a>
 </p>
 
 Um workspace de agentes de IA para desenvolvimento web full-stack. Instale uma vez e equipe seus projetos com especialistas, skills, workflows e verificacoes de qualidade.
