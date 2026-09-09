@@ -1,0 +1,33 @@
+{
+  "name": "web-kit-agents",
+  "version": "1.0.0",
+  "description": "Reusable AI agents, skills, workflows, security checks, and frontend guidance for web projects.",
+  "keywords": [
+    "ai-agents",
+    "developer-tools",
+    "web-development",
+    "security-testing",
+    "workflow-automation"
+  ],
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "package.json",
+  "bin": {
+    "web-kit-agents": "bin/web-kit-agents.js"
+  },
+  "files": [
+    "agents",
+    "skills",
+    "workflows",
+    "rules",
+    "scripts",
+    "mcp",
+    ".shared",
+    "ARCHITECTURE.md",
+    "bin"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
