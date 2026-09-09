@@ -1,94 +1,91 @@
-# 🤖 Web Kit Agents
+# 🚀 Web-ag-kit
 
-> Um kit de agentes de IA para transformar seu projeto web em um ambiente de desenvolvimento mais organizado, seguro e produtivo.
+<p align="left">
+  <a href="https://www.npmjs.com/package/@uuartofc/web-ag-kit"><img src="https://img.shields.io/npm/v/@uuartofc/web-ag-kit?logo=npm&color=CB3837" alt="npm version"></a>
+  <a href="https://github.com/uuartofc/AG-Kits"><img src="https://img.shields.io/github/stars/uuartofc/AG-Kits?style=flat&logo=github" alt="GitHub stars"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/uuartofc/AG-Kits?color=blue" alt="MIT license"></a>
+</p>
 
-Agentes especializados, skills reutilizáveis, workflows práticos e ferramentas de validação para trabalhar com IA sem começar cada projeto do zero.
+Um workspace de agentes de IA para desenvolvimento web full-stack. Instale uma vez e equipe seus projetos com especialistas, skills, workflows e verificacoes de qualidade.
 
-## 🚀 Instalação rápida
+## ⚡ Comece em segundos
 
-Execute os comandos na raiz do projeto onde você quer usar o kit:
+Na raiz do projeto:
 
 ```bash
-npm install --save-dev github:uuartofc/AG-Kits
-npx web-kit-agents init
+npx @uuartofc/web-ag-kit
 ```
 
-Pronto. O comando cria a pasta `.agents/` no projeto atual.
+O comando cria `.agents/` no projeto atual. Para instalar globalmente:
 
-## 🧠 Como o `.agents/` funciona?
+```bash
+npm install -g @uuartofc/web-ag-kit
+web-ag-kit
+```
 
-O `.agents/` é a memória operacional do seu projeto para agentes de desenvolvimento. Ele reúne instruções, especialistas e ferramentas que ajudam a IA a tomar decisões mais consistentes.
+Tambem e possivel indicar outro diretorio:
+
+```bash
+web-ag-kit ./meu-projeto
+```
+
+> O instalador preserva uma instalacao existente por padrao. Use `--force` apenas para substitui-la deliberadamente.
+
+## 🧠 O que e `.agents/`?
+
+E a camada de contexto do projeto para seus agentes de desenvolvimento: regras, especialistas, conhecimento tecnico e comandos ficam versionados junto do codigo.
 
 ```text
 .agents/
-├── agents/       👥 Personas especializadas
-├── skills/       🧩 Conhecimento técnico reutilizável
-├── workflows/    🔄 Fluxos para planejar, criar, testar e publicar
-├── rules/        📏 Regras gerais do workspace
-├── scripts/      🛠️  Scans, testes e verificações automáticas
-└── mcp/          🔌 Configurações para ferramentas MCP
+├── agents/       [agents] Papeis especializados
+├── skills/       [skills] Conhecimento reutilizavel
+├── workflows/    [flow] Processos de desenvolvimento
+├── rules/        [rules] Regras do workspace
+├── scripts/      [tools] Testes e auditorias
+└── mcp/          [MCP] Integracoes externas
 ```
 
-### O fluxo de trabalho
+## 🎯 O que ele cobre
+
+- **Frontend:** UX, acessibilidade, tipografia, responsividade e performance.
+- **Backend:** APIs, bancos de dados, autenticacao e arquitetura.
+- **Qualidade:** testes unitarios, integracao, E2E e checklists de release.
+- **Seguranca:** OWASP, autorizacao, SSRF, injecao, supply chain e resiliencia.
+- **Orquestracao:** agentes especializados para planejar e executar tarefas complexas.
+
+## 🔄 Fluxo recomendado
 
 ```text
-💡 Ideia
-    ↓
-🗺️  Planejamento
-    ↓
-👨‍💻 Implementação com agentes especializados
-    ↓
-🧪 Testes e security scan
-    ↓
-🎨 Auditoria de UX e acessibilidade
-    ↓
-🚢 Preview e deploy
+[idea] Ideia -> [plan] Plano -> [code] Implementacao -> [test] Testes -> [shield] Auditoria -> [ship] Deploy
 ```
 
-Você pode pedir ao seu agente para usar, por exemplo:
-
-- `frontend-specialist` para interfaces e UX;
-- `backend-specialist` para APIs e regras de negócio;
-- `security-auditor` para vulnerabilidades e autenticação;
-- `test-engineer` para testes unitários, integração e E2E;
-- `orchestrator` para coordenar tarefas complexas.
-
-### 🔁 Atualizar uma instalação existente
-
-Arquivos existentes são preservados por padrão. Para substituir o kit intencionalmente:
-
-```bash
-npx web-kit-agents init --force
-```
-
-## ✅ Depois da instalação
-
-Execute uma verificação inicial:
+Depois da instalacao, valide o projeto com:
 
 ```bash
 python .agents/skills/vulnerability-scanner/scripts/security_scan.py . --fail-on high
 python .agents/scripts/checklist.py .
 ```
 
-## 📦 O que vem no kit
-
-- 👥 Agentes para frontend, backend, QA, segurança, bancos de dados, DevOps e planejamento.
-- 🧩 Skills para APIs, testes, vulnerabilidades, MCP, clean code e frontend design.
-- 🔄 Workflows para planejar, desenvolver, depurar, testar, visualizar e publicar.
-- 🔐 Catálogo de testes para autorização, injeção, SSRF, resource exhaustion e lógica de negócio.
-
 ## 🧰 Requisitos
 
 - Node.js 18+
-- Python 3.9+ para os scripts de validação
+- Python 3.9+ para os scripts de auditoria
 
-## 🛡️ Segurança
+## 🔌 MCP
 
-Use este kit apenas em projetos próprios ou autorizados. Os testes de disponibilidade são controlados e isolados; o kit não autoriza DDoS volumétrico, botnets, spoofing ou testes em sistemas de terceiros.
+O kit inclui um template em `.agents/mcp/mcp_config.json`. Revise cada servidor e suas permissoes antes de adiciona-lo a configuracao global do seu agente.
 
-## 📚 Saiba mais
+## 🛡️ Uso responsavel
+
+Use o kit apenas em projetos proprios ou autorizados. Os testes de disponibilidade sao controlados e isolados; nao incluem DDoS volumetrico, botnets, spoofing ou testes em terceiros.
+
+## 📚 Documentacao
 
 - [Arquitetura](ARCHITECTURE.md)
-- [Catálogo de ataques](skills/vulnerability-scanner/attack-catalog.md)
-- [Skill de MCP](skills/mcp-builder/SKILL.md)
-- [Skill de frontend design](skills/frontend-design/SKILL.md)
+- [Catalogo de ataques](skills/vulnerability-scanner/attack-catalog.md)
+- [MCP Builder](skills/mcp-builder/SKILL.md)
+- [Frontend Design](skills/frontend-design/SKILL.md)
+
+## 📄 Licenca
+
+MIT. Consulte [LICENSE](LICENSE).

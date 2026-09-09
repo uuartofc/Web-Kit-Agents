@@ -1,7 +1,7 @@
 {
-  "name": "web-kit-agents",
+  "name": "@uuartofc/web-ag-kit",
   "version": "1.0.0",
-  "description": "Reusable AI agents, skills, workflows, security checks, and frontend guidance for web projects.",
+  "description": "AI agents, skills, workflows, security checks, and frontend guidance for web projects.",
   "keywords": [
     "ai-agents",
     "developer-tools",
@@ -10,10 +10,14 @@
     "workflow-automation"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "uuartofc",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "commonjs",
   "main": "package.json",
   "bin": {
+    "web-ag-kit": "bin/web-kit-agents.js",
     "web-kit-agents": "bin/web-kit-agents.js"
   },
   "files": [

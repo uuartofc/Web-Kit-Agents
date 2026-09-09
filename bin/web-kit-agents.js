@@ -16,10 +16,11 @@ const KIT_ENTRIES = [
 ];
 
 function printUsage() {
-  console.log(`Web Kit Agents
+  console.log(`Web-ag-kit
 
 Usage:
-  web-kit-agents init [target] [--force]
+  web-ag-kit [target]
+  web-ag-kit init [target] [--force]
 
 Commands:
   init    Install the kit into <target>/.agents (default: current directory)
@@ -71,17 +72,9 @@ function installKit(targetDirectory, force) {
 
 function main() {
   const args = process.argv.slice(2);
-  const command = args[0];
 
-  if (!command || command === "--help" || command === "-h") {
+  if (args[0] === "--help" || args[0] === "-h") {
     printUsage();
-    return;
-  }
-
-  if (command !== "init") {
-    console.error(`Unknown command: ${command}`);
-    printUsage();
-    process.exitCode = 1;
     return;
   }
 
