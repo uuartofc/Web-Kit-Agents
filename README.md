@@ -1,64 +1,94 @@
-# Web Kit Agents
+# 🤖 Web Kit Agents
 
-Reusable AI agents, skills, workflows, security checks, and frontend guidance for web projects.
+> Um kit de agentes de IA para transformar seu projeto web em um ambiente de desenvolvimento mais organizado, seguro e produtivo.
 
-## Install
+Agentes especializados, skills reutilizáveis, workflows práticos e ferramentas de validação para trabalhar com IA sem começar cada projeto do zero.
 
-From the project where you want to use the kit:
+## 🚀 Instalação rápida
+
+Execute os comandos na raiz do projeto onde você quer usar o kit:
 
 ```bash
 npm install --save-dev github:uuartofc/AG-Kits
 npx web-kit-agents init
 ```
 
-That is all. The command creates `.agents/` in the current project.
+Pronto. O comando cria a pasta `.agents/` no projeto atual.
+
+## 🧠 Como o `.agents/` funciona?
+
+O `.agents/` é a memória operacional do seu projeto para agentes de desenvolvimento. Ele reúne instruções, especialistas e ferramentas que ajudam a IA a tomar decisões mais consistentes.
 
 ```text
-your-project/
-└── .agents/
-    ├── agents/
-    ├── skills/
-    ├── workflows/
-    ├── rules/
-    ├── scripts/
-    └── mcp/
+.agents/
+├── agents/       👥 Personas especializadas
+├── skills/       🧩 Conhecimento técnico reutilizável
+├── workflows/    🔄 Fluxos para planejar, criar, testar e publicar
+├── rules/        📏 Regras gerais do workspace
+├── scripts/      🛠️  Scans, testes e verificações automáticas
+└── mcp/          🔌 Configurações para ferramentas MCP
 ```
 
-### Replace an existing installation
+### O fluxo de trabalho
 
-Existing files are preserved by default. Replace the installed kit only when intentional:
+```text
+💡 Ideia
+    ↓
+🗺️  Planejamento
+    ↓
+👨‍💻 Implementação com agentes especializados
+    ↓
+🧪 Testes e security scan
+    ↓
+🎨 Auditoria de UX e acessibilidade
+    ↓
+🚢 Preview e deploy
+```
+
+Você pode pedir ao seu agente para usar, por exemplo:
+
+- `frontend-specialist` para interfaces e UX;
+- `backend-specialist` para APIs e regras de negócio;
+- `security-auditor` para vulnerabilidades e autenticação;
+- `test-engineer` para testes unitários, integração e E2E;
+- `orchestrator` para coordenar tarefas complexas.
+
+### 🔁 Atualizar uma instalação existente
+
+Arquivos existentes são preservados por padrão. Para substituir o kit intencionalmente:
 
 ```bash
 npx web-kit-agents init --force
 ```
 
-## After installation
+## ✅ Depois da instalação
 
-Run a security scan and the project checklist:
+Execute uma verificação inicial:
 
 ```bash
 python .agents/skills/vulnerability-scanner/scripts/security_scan.py . --fail-on high
 python .agents/scripts/checklist.py .
 ```
 
-## What you get
+## 📦 O que vem no kit
 
-- Specialist agents for frontend, backend, QA, security, databases, DevOps, and planning.
-- Skills for APIs, testing, vulnerability analysis, MCP servers, clean code, and frontend design.
-- Workflows for planning, building, debugging, testing, preview, deployment, and orchestration.
+- 👥 Agentes para frontend, backend, QA, segurança, bancos de dados, DevOps e planejamento.
+- 🧩 Skills para APIs, testes, vulnerabilidades, MCP, clean code e frontend design.
+- 🔄 Workflows para planejar, desenvolver, depurar, testar, visualizar e publicar.
+- 🔐 Catálogo de testes para autorização, injeção, SSRF, resource exhaustion e lógica de negócio.
 
-## Requirements
+## 🧰 Requisitos
 
 - Node.js 18+
-- Python 3.9+ for the validation scripts
+- Python 3.9+ para os scripts de validação
 
-## Security
+## 🛡️ Segurança
 
-Use this kit only on projects you own or are authorized to test. Availability checks are bounded and isolated; the kit does not authorize volumetric DDoS, botnets, spoofing, or testing third-party systems.
+Use este kit apenas em projetos próprios ou autorizados. Os testes de disponibilidade são controlados e isolados; o kit não autoriza DDoS volumétrico, botnets, spoofing ou testes em sistemas de terceiros.
 
-## Links
+## 📚 Saiba mais
 
-- [Architecture](ARCHITECTURE.md)
-- [Security attack catalog](skills/vulnerability-scanner/attack-catalog.md)
-- [MCP builder skill](skills/mcp-builder/SKILL.md)
-- [Frontend design skill](skills/frontend-design/SKILL.md)
+- [Arquitetura](ARCHITECTURE.md)
+- [Catálogo de ataques](skills/vulnerability-scanner/attack-catalog.md)
+- [Skill de MCP](skills/mcp-builder/SKILL.md)
+- [Skill de frontend design](skills/frontend-design/SKILL.md)
