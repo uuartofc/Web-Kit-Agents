@@ -117,8 +117,10 @@ class UXAuditor:
         complex_elements = len(re.findall(r'<input|<select|<textarea|<option', content, re.IGNORECASE))
 
         # --- 1. PSYCHOLOGY LAWS ---
-        # Hick's Law
-        nav_items = len(re.findall(r'<NavLink|<Link|<a\s+href|nav-item', content, re.IGNORECASE))
+        # Hick's Law: count navigation controls, not every content link.
+        nav_blocks = re.findall(r'<nav\b[^>]*>.*?</nav>', content, re.IGNORECASE | re.DOTALL)
+        nav_content = '\n'.join(nav_blocks) if nav_blocks else content
+        nav_items = len(re.findall(r'<NavLink|<Link|<a\s+href|nav-item', nav_content, re.IGNORECASE))
         if nav_items > 7:
             self.issues.append(f"[Hick's Law] {filename}: {nav_items} nav items (Max 7)")
         
@@ -138,9 +140,9 @@ class UXAuditor:
         # Serial Position Effect - Important items at beginning/end
         if nav_items > 3:
             # Check if last nav item is important (contact, login, etc.)
-            nav_content = re.findall(r'<NavLink|<Link|<a\s+href[^>]*>([^<]+)</a>', content, re.IGNORECASE)
-            if nav_content and len(nav_content) > 2:
-                last_item = nav_content[-1].lower() if nav_content else ''
+            nav_labels = re.findall(r'<NavLink|<Link|<a\s+href[^>]*>([^<]+)</a>', nav_content, re.IGNORECASE)
+            if nav_labels and len(nav_labels) > 2:
+                last_item = nav_labels[-1].lower() if nav_labels else ''
                 if not any(x in last_item for x in ['contact', 'login', 'sign', 'get started', 'cta', 'button']):
                     self.warnings.append(f"[Serial Position] {filename}: Last nav item may not be important. Place key actions at start/end.")
 
